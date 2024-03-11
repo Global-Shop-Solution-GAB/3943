@@ -1,0 +1,330 @@
+Program.Sub.ScreenSU.Start
+gui.SS_Form1..create
+gui.SS_Form1..caption("Print Receiving Label")
+gui.SS_Form1..size(5100,2475)
+gui.SS_Form1..minx(0)
+gui.SS_Form1..miny(0)
+gui.SS_Form1..position(0,0)
+gui.SS_Form1..event(unload,Unload)
+gui.SS_Form1..alwaysontop(False)
+gui.SS_Form1..fontname("Arial")
+gui.SS_Form1..fontsize(8)
+gui.SS_Form1..forecolor(0)
+gui.SS_Form1..fontstyle(,,,,)
+gui.SS_Form1..BackColor(-2147483633)
+gui.SS_Form1..controlbox(True)
+gui.SS_Form1..maxbutton(False)
+gui.SS_Form1..minbutton(False)
+gui.SS_Form1..mousepointer(0)
+gui.SS_Form1..moveable(True)
+gui.SS_Form1..sizeable(False)
+gui.SS_Form1..ShowInTaskBar(True)
+gui.SS_Form1..titlebar(True)
+gui.SS_Form1.lbl_txtPart.create(label,"Part",True,1515,200,1,100,100,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.lbl_txtPart.defaultvalue("")
+gui.SS_Form1.lbl_txtPart.controlgroup(0)
+gui.SS_Form1.txtPart.create(textbox,"",True,1650,330,0,100,300,False,0,Arial,8,16777215,1)
+gui.SS_Form1.txtPart.defaultvalue("")
+gui.SS_Form1.txtPart.controlgroup(0)
+gui.SS_Form1.lbl_txtDesc.create(label,"Description",True,1920,200,1,1880,100,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.lbl_txtDesc.defaultvalue("")
+gui.SS_Form1.lbl_txtDesc.controlgroup(0)
+gui.SS_Form1.txtDesc.create(textbox,"",True,2910,330,0,1850,300,False,0,Arial,8,16777215,1)
+gui.SS_Form1.txtDesc.defaultvalue("")
+gui.SS_Form1.txtDesc.controlgroup(0)
+gui.SS_Form1.lbl_txtDate.create(label,"Date",True,1125,200,1,2085,700,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.lbl_txtDate.defaultvalue("")
+gui.SS_Form1.lbl_txtDate.controlgroup(0)
+gui.SS_Form1.txtDate.create(textbox,"",True,1275,330,0,2070,900,False,0,Arial,8,16777215,1)
+gui.SS_Form1.txtDate.defaultvalue("")
+gui.SS_Form1.txtDate.controlgroup(0)
+gui.SS_Form1.lbl_txtMoisture.create(label,"Moisture Sensitivity Level",True,1875,200,1,125,700,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.lbl_txtMoisture.defaultvalue("")
+gui.SS_Form1.lbl_txtMoisture.controlgroup(0)
+gui.SS_Form1.txtMoisture.create(textbox,"",True,1890,330,0,100,900,False,0,Arial,8,16777215,1)
+gui.SS_Form1.txtMoisture.defaultvalue("")
+gui.SS_Form1.txtMoisture.controlgroup(0)
+gui.SS_Form1.lbl_txtBin.create(label,"Bin",True,555,200,1,3440,700,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.lbl_txtBin.defaultvalue("")
+gui.SS_Form1.lbl_txtBin.controlgroup(0)
+gui.SS_Form1.txtBin.create(textbox,"",True,780,330,0,3425,900,False,0,Arial,8,16777215,1)
+gui.SS_Form1.txtBin.defaultvalue("")
+gui.SS_Form1.txtBin.controlgroup(0)
+gui.SS_Form1.lbl_txtUM.create(label,"UM",True,435,200,1,4300,700,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.lbl_txtUM.defaultvalue("")
+gui.SS_Form1.lbl_txtUM.controlgroup(0)
+gui.SS_Form1.txtUM.create(textbox,"",True,480,330,0,4285,900,False,0,Arial,8,16777215,1)
+gui.SS_Form1.txtUM.defaultvalue("")
+gui.SS_Form1.txtUM.controlgroup(0)
+gui.SS_Form1.cmd_Print.create(button)
+gui.SS_Form1.cmd_Print.caption("Print")
+gui.SS_Form1.cmd_Print.visible(True)
+gui.SS_Form1.cmd_Print.size(1000,360)
+gui.SS_Form1.cmd_Print.zorder(0)
+gui.SS_Form1.cmd_Print.position(100,1400)
+gui.SS_Form1.cmd_Print.enabled(True)
+gui.SS_Form1.cmd_Print.fontname("Arial")
+gui.SS_Form1.cmd_Print.fontsize(8)
+gui.SS_Form1.cmd_Print.event(click,Print)
+gui.SS_Form1.cmd_Print.defaultvalue("")
+gui.SS_Form1.cmd_Print.controlgroup(0)
+gui.SS_Form1.lbl_txtPrinter.create(label,"Printer",False,555,200,1,1200,2400,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.lbl_txtPrinter.defaultvalue("")
+gui.SS_Form1.lbl_txtPrinter.controlgroup(0)
+gui.SS_Form1.txtPrinter.create(textbox,"",False,3525,330,0,600,2000,False,0,Arial,8,16777215,1)
+gui.SS_Form1.txtPrinter.defaultvalue("")
+gui.SS_Form1.txtPrinter.controlgroup(0)
+gui.SS_Form1.cmd_txtPrinter.create(button)
+gui.SS_Form1.cmd_txtPrinter.caption("^")
+gui.SS_Form1.cmd_txtPrinter.visible(False)
+gui.SS_Form1.cmd_txtPrinter.size(375,330)
+gui.SS_Form1.cmd_txtPrinter.zorder(0)
+gui.SS_Form1.cmd_txtPrinter.position(4350,1995)
+gui.SS_Form1.cmd_txtPrinter.enabled(True)
+gui.SS_Form1.cmd_txtPrinter.fontname("Arial")
+gui.SS_Form1.cmd_txtPrinter.fontsize(8)
+gui.SS_Form1.cmd_txtPrinter.event(click,BrowsePrinter)
+gui.SS_Form1.cmd_txtPrinter.defaultvalue("")
+gui.SS_Form1.cmd_txtPrinter.controlgroup(0)
+gui.SS_Form1.txtQty.create(textbox,"",False,525,330,0,100,2000,True,0,Arial,8,-2147483643,1)
+gui.SS_Form1.txtQty.numericonly(2)
+gui.SS_Form1.txtQty.defaultvalue("1")
+gui.SS_Form1.txtQty.controlgroup(0)
+gui.SS_Form1.txtQty.tabstop(True)
+gui.SS_Form1.txtQty.tabindex(1)
+gui.SS_Form1.cmd_Print.tabstop(True)
+gui.SS_Form1.cmd_Print.tabindex(2)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.UDT.uLabel.Define("WP_Part",String,WP_Part)
+Variable.UDT.uLabel.Define("WP_UM",String,WP_UM)
+Variable.UDT.uLabel.Define("WP_Bin",String,WP_Bin)
+Variable.UDT.uLabel.Define("WP_Date",String,WP_Date)
+Variable.UDT.uLabel.Define("WP_Moist",String,WP_Moist)
+Variable.UDT.uLabel.Define("WP_Desc",String,WP_Desc)
+Variable.uGlobal.uLabel.Declare("uLabel")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+'Coded by SFF
+'Codesoft pre-processor to print labels from PO Receipts for the current part in the receiving(line Selected) stage
+'6/19/2015
+
+'in the forms designer, this has controls hidden at the bottom under the print button,
+'these were disabled temporarily, pending the print function being able to pass # of copies
+'if this program is maintenanced later, add in passing the printer and # of copies in
+' the "Print" Sub - PrintCodesoftLabelFromUDT function
+
+'Populate Hook Rename script button
+F.Intrinsic.Control.If(V.Caller.Hook,=,15020)
+	V.Passed.000244.Set("Labels")
+F.Intrinsic.Control.ElseIf(V.Caller.Hook,=,15070)
+	F.ODBC.Connection!conX.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+	'Show Screen before printing label
+	F.Intrinsic.Control.CallSub(Loadscreen)
+	Gui.SS_Form1..Show
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3943_PO_RCPT_LABELS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Main.End
+
+Program.Sub.LoadScreen.Start
+F.Intrinsic.Control.SetErrorHandler("LoadScreen_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+'Load part info
+V.Local.sSql.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.sRet.Declare(String)
+
+'Set Qty to 1
+Gui.SS_Form1.txtQty.Text(1)
+
+'Default Printer
+gui.SS_Form1.txtPrinter.Text(Variable.Printer.DefaultPrinter)
+
+'Get Part and Description from Screen, only change if there is a record in the inventory master
+Gui.SS_Form1.txtPart.Text(V.Passed.000071)
+Gui.SS_Form1.txtDesc.Text(V.Passed.000072)
+Gui.SS_Form1.txtBin.Text(V.Passed.000264)
+
+F.Intrinsic.Control.If(V.Passed.000071.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("No Part Selected to Receive","Select Part to Receive")
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+
+'Get Description,UM,BIN from Inventory Master and set on screen if different
+F.Intrinsic.String.Build("Select PART,DESCRIPTION,BIN,UM_INVENTORY from v_INVENTORY_MSTR where PART = '{0}'",V.Passed.000071,V.Local.sSql)
+F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+	Gui.SS_Form1.txtPart.Text(V.ODBC.conX!rst.FieldValTrim!PART)
+	Gui.SS_Form1.txtDesc.Text(V.ODBC.conX!rst.FieldValTrim!DESCRIPTION)
+	Gui.SS_Form1.txtBin.Text(V.ODBC.conX!rst.FieldValTrim!BIN)
+	Gui.SS_Form1.txtUM.Text(V.ODBC.conX!rst.FieldValTrim!UM_INVENTORY)
+F.Intrinsic.Control.EndIf
+F.ODBC.conX!rst.Close
+
+'Get TEXT_INFO2 from inventory_MST2
+F.Intrinsic.String.Build("Select TEXT_INFO2 from v_INVENTORY_MST2 where PART = '{0}'",V.Passed.000071,V.Local.sSql)
+F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+	Gui.SS_Form1.txtMoisture.Text(V.ODBC.conX!rst.FieldValTrim!TEXT_INFO2)
+F.Intrinsic.Control.EndIf
+F.ODBC.conX!rst.Close
+
+'Show todays date MM/DD/YYYY
+F.Intrinsic.String.Format(V.Ambient.Date,"MM/DD/YYYY",V.Local.sRet)
+Gui.SS_Form1.txtDate.Text(V.Local.sRet)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LoadScreen_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3943_PO_RCPT_LABELS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.LoadScreen.End
+
+Program.Sub.Print.Start
+F.Intrinsic.Control.SetErrorHandler("Print_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+'Print Label for Part
+V.Local.sValue.Declare(String)
+V.Local.sName.Declare(String)
+V.Local.sRptID.Declare(Long)
+V.Local.iQty.Declare(Long)
+V.Local.iLogID.Declare(Long)
+V.Local.iBIRunID.Declare(Long)
+
+'in the forms designer, this has controls hidden at the bottom under the print button,
+'these were disabled temporarily, pending the print function being able to pass # of copies
+'if this program is maintenanced later, add in passing the printer and # of copies in
+' the "Print" Sub - PrintCodesoftLabelFromUDT function
+
+V.uGlobal.uLabel.Redim(0,0)
+
+V.uGlobal.uLabel(0)!WP_Part.Set(V.Screen.SS_Form1!txtPart.Text)
+V.uGlobal.uLabel(0)!WP_Bin.Set(V.Screen.SS_Form1!txtBin.Text)
+V.uGlobal.uLabel(0)!WP_Desc.Set(V.Screen.SS_Form1!txtDesc.Text)
+V.uGlobal.uLabel(0)!WP_UM.Set(V.Screen.SS_Form1!txtUM.Text)
+V.uGlobal.uLabel(0)!WP_Moist.Set(V.Screen.SS_Form1!txtMoisture.Text)
+V.uGlobal.uLabel(0)!WP_Date.Set(V.Screen.SS_Form1!txtDate.Text)
+
+'Get RptID
+F.Global.BI.GetIDFromName("GCG_3943_PO_RCPT_LABEL.lab",V.Local.sRptID)
+'RunID
+F.Global.BI.GetRunID(V.Local.iBIRunID)
+'Start Logging
+F.Global.BI.StartLogging(V.Local.iBIRunID,V.Local.sRptID,0,"GCG_3943_PO_RCPT_LABEL",V.Local.iLogID)
+
+'sName Set to WP Vars in Label
+V.Local.sName.Set("WP_Part*!*WP_Desc*!*WP_Moist*!*WP_Date*!*WP_Bin*!*WP_UM")
+
+'Print Label
+'F.Global.BI.PrintCodesoftLabelFromUDT(V.Local.iBIRunID,V.Local.iLogID,"uGlobal.uLabel",V.Local.sName,V.Screen.SS_Form1!txtPrinter.Text,True)
+
+'The below is NOT passing the Printer name, if this function is changed to pass # of copies, edit the above function and delete this one
+F.Global.BI.PrintCodesoftLabelFromUDT(V.Local.iBIRunID,V.Local.iLogID,"uGlobal.uLabel",V.Local.sName,"",True)
+
+'End
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Label("Print_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3943_PO_RCPT_LABELS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Print.End
+
+Program.Sub.BrowsePrinter.Start
+F.Intrinsic.Control.SetErrorHandler("BrowsePrinter_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+'Browse for system printers.
+
+F.Intrinsic.Printer.SelectPrinterDialog
+
+'Set default printer and send printer name to screen
+f.Intrinsic.Control.If(v.Ambient.PrinterDialogSelection,<>,"***CANCEL***")
+	f.Intrinsic.Printer.setDefaultPrinter(v.Ambient.PrinterDialogSelection)
+	gui.SS_Form1.txtPrinter.Text(v.Ambient.PrinterDialogSelection)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("BrowsePrinter_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3943_PO_RCPT_LABELS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.BrowsePrinter.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.End
+
+Program.Sub.Unload.End
+
+Program.Sub.Comments.Start
+${$0$}$GCG_PO_RCPT_LABELS$}$SUPERVSR$}$6/19/2015
+${$3$}$0$}$$}$-1$}$-1$}$$}$1/1/1900$}$GAB:
+***On Populate Hook of PO Receipts***:
+>Rename Script 3 Button to "Labels"
+
+***On Script 3 Hook "Labels"***
+>Check to make sure part is in the Receiving stage, if NOT, then show message box "No Part Selected, Please Select Part to Receive" and Do NOT continue.
+
+> If Part is selected, show screen with textboxes for the following:("caption")
+PART NUMBER "Part"
+INVENTORY_MSTR!DESCRIPTION "Description"
+CURRENT DATE (MM\DD\YYYY) "Date"
+INVENTORY_MST2!TEXT_INFO2 "moisture sensitivity level"
+INVENTORY_MSTR!BIN "Bin"
+INVENTORY_MSTR!UM_INVENTORY "UM"
+
+The above fields is what will be passed to the Label along with "GSS USERNAME"
+
+>Save fields to UDT that have the element names and field references matched up to the When Printed Variables on the CodeSoft Label.
+
+>Get Default Printer for that Client PC
+**Default printer for label must be set up in codesoft on server prior to this working correctly.
+
+>Print Codesoft Label from UDT using the Default Printer
+
+Program.Sub.Comments.End
+Program.Sub.ScreenSS.Start
+SS_Form1{{CAPTION::Print Receiving Label
+SS_Form1.CTRL{{NAME::txtPart\\TYPE::2\\CAPTION::Part\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::txtDesc\\TYPE::2\\CAPTION::Description\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::txtDate\\TYPE::2\\CAPTION::Date\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::txtMoisture\\TYPE::2\\CAPTION::Moisture Sensitivity Level\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::txtBin\\TYPE::2\\CAPTION::Bin\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::txtUM\\TYPE::2\\CAPTION::Unit of Measure\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::cmd_Print\\TYPE::5\\CAPTION::Print\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::txtPrinter\\TYPE::2\\CAPTION::Printer\\GROUP::-1\\BROWSER::1\\SIZE::1
+
+Program.Sub.ScreenSS.End
+
